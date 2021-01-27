@@ -1,0 +1,53 @@
+<div>
+<form [formGroup]="formSignIn" class=centrage (ngSubmit)="onSubmit()">
+    <img src="assets/img/logo.jpg" class="" alt="image"/>
+        <p>Saisissez vos informations pour créer votre compte</p>
+        <div>
+            <app-alert></app-alert>
+        </div>
+        <select formControlName="title" class="form-control-inp" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.title.errors }" >
+            <option value="" disabled selected hidden>Civilité</option>
+            <option value="Mr">Mr</option>
+            <option value="Madame">Madame</option>
+            <option value="Mademoiselle">Mademoiselle</option>
+        </select>
+        <div *ngIf="submitted && formSignIn.controls.title.errors" class="invalid-feedback">
+            <div *ngIf="formSignIn.controls.title.errors.required">Remplir le champ</div>
+        </div>
+
+            <input type="string" formControlName="Nom" class="form-control-inp" placeholder="Nom" autocomplete="family-name" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.Nom.errors }" >
+            <div *ngIf="submitted && formSignIn.controls.Nom.errors" class="invalid-feedback">
+                <div *ngIf="formSignIn.controls.Nom.errors.required">Indiquez votre nom</div>
+            </div>
+
+            <input type="string" formControlName="Prenom" class="form-control-inp" placeholder="Prenom" autocomplete="name" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.Prenom.errors }">
+            <div *ngIf="submitted && formSignIn.controls.Prenom.errors" class="invalid-feedback">
+                <div *ngIf="formSignIn.controls.Prenom.errors.required">Indiquez votre prenom</div>
+            </div>
+
+                    <input type="date" formControlName="age" class="form-control-inp" placeholder="age" autocomplete="bday" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.age.errors }">
+                    <div *ngIf="submitted && formSignIn.controls.age.errors" class="invalid-feedback">
+                        <div *ngIf="formSignIn.controls.age.errors.required">Indiquez votre date de naissance</div>
+                    </div>
+
+                <input type="email" formControlName="username" class="form-control-inp" placeholder="Email" autocomplete="email" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.username.errors }">
+                <div *ngIf="submitted && formSignIn.controls.username.errors" class="invalid-feedback">
+                    <div *ngIf="formSignIn.controls.username.errors.required">Indiquez votre E-mail</div>
+                    <div *ngIf="formSignIn.controls.username.errors.email">Email non valide</div>
+                </div>
+
+            <input type="password" formControlName="password" class="form-control-inp" placeholder="Mot de passe" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.password.errors }" />
+            <div *ngIf="submitted && formSignIn.controls.password.errors" class="invalid-feedback">
+                <div *ngIf="formSignIn.controls.password.errors.required">Mot de passe obligatoire</div>
+                <div *ngIf="formSignIn.controls.password.errors.minlength">le mot de passe doit contenir 6 caractères minimum</div>
+            </div>
+
+        <input type="password"  formControlName="confirmpassWord" class="form-control-inp" placeholder="Confirmer mot de passe" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.confirmpassWord.errors }" />
+        <div *ngIf="submitted && formSignIn.controls.confirmpassWord.errors" class="invalid-feedback">
+            <div *ngIf="formSignIn.controls.confirmpassWord.errors.required">Confirmez votre mot de passe</div>
+            <div *ngIf="formSignIn.controls.confirmpassWord.errors.mustMatch">Le mot de passe ne correspond pas</div>
+        </div>
+    <button class="w-100 btn btn-lg btn-sub" type="submit">Valider</button>
+</form>
+</div>
+ 
