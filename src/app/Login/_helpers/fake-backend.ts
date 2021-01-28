@@ -52,8 +52,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         function register() {
             const user = body
-
-            if (users.find((x: { userName: any; }) => x.userName === user.username)) {
+            console.log(users);
+            if (users.find((x: { username: any; }) => {
+                return x.username === user.username;
+            })) {
                 return error('Email "' + user.username + '" est déja existant')
             }
 
