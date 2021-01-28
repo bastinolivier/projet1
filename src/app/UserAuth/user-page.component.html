@@ -1,1 +1,56 @@
-<h3>Bonjour {{currentUser.Prenom}} Bienvenue sur votre espace personnel  </h3>
+<div class="container mt-5">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h2 class="display-4">Bonjour {{currentUser.title}} {{currentUser.Prenom}} {{currentUser.Nom}}</h2>
+      <p class="lead"> Bienvenue sur votre espace personnel</p>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 mt-5 text-center">
+      <div class="col">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header card-color">
+          <h4 class="my-0 fw-normal text-color">Actualités</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Communication interne</li>
+            <li>Bourse</li>
+            <li>Meteo</li>
+            <li>Nouveautés</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-secondary">Portail d'actualités</button>
+        </div>
+      </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header card-color">
+          <h4 class="my-0 fw-normal text-color">Outils</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>Documentations techniques</li>
+                <li>Carnet d'adresses</li>
+                <li>Feuilles de temps </li>
+                <li>Notes de frais</li>
+            </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-secondary">Accéder au outils</button>
+        </div>
+      </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header card-color">
+          <h4 class="my-0 fw-normal text-color">Ressources humaines</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Fiches de paie</li>
+            <li>Demande de congés</li>
+            <li>Arret maladie</li>
+            <li>Demande de rendez-vous</li>
+          </ul>
+          <button type="button" class="w-100 btn btn-lg btn-outline-secondary">Contactez-nous</button>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
