@@ -46,3 +46,6 @@
     margin-left: 30%;
     padding: .5rem 1rem;
 }
+.cursor {
+    cursor:pointer;
+}

@@ -9,7 +9,9 @@ import { User } from '../../_models/user';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-  static currentUserValue: User;
+    static currentUserValue: User;
+
+    public currentRoute$ = new BehaviorSubject<string>('/');
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -26,9 +28,9 @@ export class AuthenticationService {
 
                 if (user && user.token) {
 
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-             }
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.currentUserSubject.next(user);
+                }
                 return user;
             }));
     }
