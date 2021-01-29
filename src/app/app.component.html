@@ -1,10 +1,10 @@
 <header class="mb-auto">
-    <a routerLinkActive="active" routerLink="/composant1"><h3 class=float-md-start mb-0>AkanSoft</h3></a>
+    <a routerLinkActive="active" routerLink="/home"><h3 class=float-md-start mb-0>AkanSoft</h3></a>
         <nav *ngIf="(currentUser$ | async)" class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" routerLinkActive="active" routerLink="" (click)="logout()">Logout</a>
+            <a class="nav-link" routerLinkActive="active" (click)="logout()">Déconnexion</a>
         </nav>
         <nav *ngIf="!(currentUser$ | async)" class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" routerLinkActive="active" routerLink="/composant2">Login</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/login">Connexion</a>
         </nav>
 </header> 
 <router-outlet></router-outlet>

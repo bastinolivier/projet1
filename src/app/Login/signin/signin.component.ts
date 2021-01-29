@@ -15,12 +15,8 @@ export class SigninComponent implements OnInit {
 
   public formSignIn: FormGroup;
   public valueFromPass: string;
-  submitted = false;
+  public submitted = false;
   
-  
-  
-  
-
   constructor(
     private formBuilder:FormBuilder,
     private authenticationService: AuthenticationService,
@@ -60,7 +56,7 @@ export class SigninComponent implements OnInit {
     .subscribe(
             data => {
               this.alertService.success('Registration successful', true);
-                this.router.navigate(['/composant2']);
+                this.router.navigate(['/home']);
             },
             error => {
               this.alertService.error(error);

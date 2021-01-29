@@ -1,30 +1,34 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { Composant1Component } from './Home/composant1.component';
-import { Composant2Component } from './Login/composant2.component';
-import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
-import { LoginComponent } from './Login/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { SigninComponent } from './Login/signin/signin.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JwtInterceptor } from './Login/_helpers/jwt.interceptor';
-import { fakeBackendProvider } from './Login/_helpers/fake-backend';
-import { ErrorInterceptor } from './Login/_helpers/error.interceptor';
-import { UserPageComponent } from './UserAuth/user-page.component';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './Home/home.component';
 import { AlertComponent } from './Login/login/alert/alert.component';
+import { LoginComponent } from './Login/login/login.component';
+import { SigninComponent } from './Login/signin/signin.component';
+import { ErrorInterceptor } from './Login/_helpers/error.interceptor';
+import { fakeBackendProvider } from './Login/_helpers/fake-backend';
+import { JwtInterceptor } from './Login/_helpers/jwt.interceptor';
+import { ContactComponent } from './UserAuth/contact/contact.component';
+import { NewsPageComponent } from './UserAuth/news-page/news-page.component';
+import { ToolsPageComponent } from './UserAuth/tools-page/tools-page.component';
+import { UserPageComponent } from './UserAuth/user-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Composant1Component,
-    Composant2Component,
+    HomeComponent,
     LoginComponent,
     SigninComponent,
     UserPageComponent,
-    AlertComponent
+    AlertComponent,
+    ContactComponent,
+    ToolsPageComponent,
+    NewsPageComponent
   ],
   imports: [
     BrowserModule,

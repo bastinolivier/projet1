@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit {
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/userAuth';
   }
-  onSubmit() :void {
+ 
+  public onSubmit() :void {
     this.submitted = true;
 
     this.alertService.clear();

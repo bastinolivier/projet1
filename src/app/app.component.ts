@@ -10,7 +10,7 @@ import { User } from './_models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'projet1';
+  title = 'AkanSoft';
 
   public currentUser$: Observable<User>;
 
@@ -20,6 +20,6 @@ export class AppComponent {
 
     public logout() {
         this.authenticationService.logout();
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
     }
 }
