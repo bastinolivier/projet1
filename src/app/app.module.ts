@@ -17,6 +17,7 @@ import { ContactComponent } from './UserAuth/contact/contact.component';
 import { NewsPageComponent } from './UserAuth/news-page/news-page.component';
 import { ToolsPageComponent } from './UserAuth/tools-page/tools-page.component';
 import { UserPageComponent } from './UserAuth/user-page.component';
+import { HeaderMenuComponent } from './header-menu/header-menu.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserPageComponent } from './UserAuth/user-page.component';
     AlertComponent,
     ContactComponent,
     ToolsPageComponent,
-    NewsPageComponent
+    NewsPageComponent,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,

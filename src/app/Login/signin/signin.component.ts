@@ -56,7 +56,7 @@ export class SigninComponent implements OnInit {
     .subscribe(
             data => {
               this.alertService.success('Registration successful', true);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/login']);
             },
             error => {
               this.alertService.error(error);

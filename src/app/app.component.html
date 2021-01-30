@@ -1,13 +1,33 @@
-<header class="mb-auto">
-    <a routerLinkActive="active" routerLink="/home"><h3 class="float-md-start mb-0 cursor">AkanSoft</h3></a>
-        <nav *ngIf="(currentUser$ | async)" class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" routerLinkActive="active" (click)="logout()">Déconnexion</a>
-        </nav>
-        <nav *ngIf="(currentUser$ | async)" class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" routerLink="/userAuth">Espace personel</a>
-        </nav>
-        <nav *ngIf="!(currentUser$ | async)" class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link" routerLinkActive="active" routerLink="/login">Connexion</a>
-        </nav>
-</header> 
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span routerLink="/home"><h3 class="fs-2 cursor">AkanSoft</h3></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li *ngIf="(currentUser$ | async)" class="nav-item active">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/userAuth">Espace personel</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li *ngIf="!(currentUser$ | async)" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/login">Connexion</a>
+                </li>
+                <li *ngIf="(currentUser$ | async)" class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" (click)="logout()">Déconnexion</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
 <router-outlet></router-outlet>
