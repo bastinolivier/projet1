@@ -14,6 +14,12 @@ export class ContactComponent implements OnInit {
   public contactForm: FormGroup;
   public submitted = false;
 
+public objets = [
+  {label: 'Info paie'},
+  {label: 'Demande de congés'},
+  {label: 'Arrêt maladie'},
+  {label: 'Demande de rendez-vous'},
+  {label: 'Autres'}];
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -23,9 +29,8 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.currentUser = this.authenticationService.currentUserValue;
     this.contactForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]],
+      username: [this.authenticationService.currentUserValue.username, [Validators.required, Validators.email]],
       objet: ['', Validators.required],
       message: ['', Validators.required],
     },

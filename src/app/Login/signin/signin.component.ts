@@ -33,8 +33,8 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
     this.formSignIn = this.formBuilder.group({
       title: ['', Validators.required],
-      Nom: ['', Validators.required],
-      Prenom: ['', Validators.required],
+      name: ['', Validators.required],
+      firstname: ['', Validators.required],
       age: ['', Validators.required],
       username: ['', [Validators.required,Validators.email]],
       password: ['', [Validators.required,Validators.minLength(6)]],
@@ -56,7 +56,7 @@ export class SigninComponent implements OnInit {
     .subscribe(
             data => {
               this.alertService.success('Registration successful', true);
-                this.router.navigate(['/home']);
+                this.router.navigate(['/login']);
             },
             error => {
               this.alertService.error(error);

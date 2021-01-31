@@ -15,11 +15,11 @@ import { LoginComponent } from './Login/login/login.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent},
   { path: 'userAuth', component: UserPageComponent, canActivate: [AuthGuard]}, 
   {path: 'newsPage' , component: NewsPageComponent, canActivate: [AuthGuard]},
   {path: 'toolsPage' , component: ToolsPageComponent, canActivate: [AuthGuard]},
   {path: 'humanRessource' , component: ContactComponent, canActivate: [AuthGuard]},
-  { path: 'signin', component: SigninComponent},
   { path: '**', redirectTo: 'home' },
 ];
 

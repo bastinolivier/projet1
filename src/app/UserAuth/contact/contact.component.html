@@ -1,19 +1,15 @@
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mt-5 mx-auto">
 <div><h3 class="display-4 text-center">Contacter les ressources humaines</h3></div>
-<form class="center">
+<form [formGroup]="contactForm" class="center">
     <div class="form-group">
       <label for="exampleFormControlInput1">Email</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" value={{currentUser.username}}>
+      <input type="email" formControlName="username" class="form-control" id="exampleFormControlInput1">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Objet</label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <label for="object">Objet</label>
+      <select class="form-control" formControlName="objet" id="object">
         <option value="" disabled selected hidden>Sujet de la demande</option>
-        <option>Info paie</option>
-        <option>Demande de congés</option>
-        <option>Arrêt maladie</option>
-        <option>Demande de rendez-vous</option>
-        <option>Autres</option>
+        <option *ngFor="let item of objets">{{item.label}}</option>
       </select>
     </div>
     <div class="form-group">
