@@ -9,7 +9,7 @@ export class NewsPageComponent implements OnInit {
    
   private articles : any;
 
-  constructor(private newsService : NewsService) { }
+  constructor(public newsService : NewsService) { }
 
   ngOnInit(): void {
     this.FetchHeadlines();
