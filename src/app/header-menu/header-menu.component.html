@@ -10,7 +10,7 @@
               <a routerLink="/home" class="text-white fs-1 cursor navbar-nav mr-auto"><h4>Page d'accueil</h4></a>
               <ul class="navbar-nav">
                 <li *ngIf="(currentUser$ | async)" class="nav-item">
-                    <a class="nav-link" routerLinkActive="active" routerLink="/userAuth">Espace personel</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="/userAuth">Espace personnel</a>
                 </li>
                 <li *ngIf="!(currentUser$ | async)" class="nav-item">
                     <a class="nav-link" routerLinkActive="active" routerLink="/login">Connexion</a>

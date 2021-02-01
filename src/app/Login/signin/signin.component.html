@@ -17,12 +17,12 @@
 
             <input type="string" formControlName="name" class="form-control-inp" placeholder="Nom" autocomplete="family-name" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.name.errors }" >
             <div *ngIf="submitted && formSignIn.controls.name.errors" class="invalid-feedback">
-                <div *ngIf="formSignIn.controls.name.errors.required">Indiquez votre name</div>
+                <div *ngIf="formSignIn.controls.name.errors.required">Indiquez votre nom</div>
             </div>
 
-            <input type="string" formControlName="firstname" class="form-control-inp" placeholder="Prenom" autocomplete="name" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.firstname.errors }">
+            <input type="string" formControlName="firstname" class="form-control-inp" placeholder="Prénom" autocomplete="name" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.firstname.errors }">
             <div *ngIf="submitted && formSignIn.controls.firstname.errors" class="invalid-feedback">
-                <div *ngIf="formSignIn.controls.firstname.errors.required">Indiquez votre firstname</div>
+                <div *ngIf="formSignIn.controls.firstname.errors.required">Indiquez votre prénom</div>
             </div>
 
                     <input type="date" formControlName="age" class="form-control-inp" placeholder="age" autocomplete="bday" [ngClass]="{ 'is-invalid': submitted && formSignIn.controls.age.errors }">
